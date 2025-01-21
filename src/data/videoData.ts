@@ -1,0 +1,77 @@
+const videos = [
+    {
+      id: 1,
+      title: 'Cuándo usar let, var y const?',
+      category: 'Frontend',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/cuandoUsarVar.png',
+      videoUrl: 'https://www.youtube.com/watch?v=PztCEdIJITY&ab_channel=AluraLatam',
+      description: 'Aprende los conceptos básicos de javascript en este curso introductorio.',
+    },
+    {
+      id: 2,
+      title: 'Que es React?',
+      category: 'Frontend',
+      imageUrl: 'https://raw.githubusercontent.com/EdwinPuello/AluraFlix/refs/heads/master/src/assets/img/VideoCard.png',
+      videoUrl: 'https://www.youtube.com/watch?v=',
+      description: 'Aprende los conceptos básicos de reac en este curso introductorio.',
+    },
+    {
+      id: 3,
+      title: 'Equipo Front End',
+      category: 'Frontend',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/equipoFrontend.png',
+      videoUrl: 'https://www.youtube.com/watch?v=rpvrLaBQwgg&ab_channel=AluraLatam',
+      description: '¿Estás empezando tus estudios de Programación? ¿Te interesa todo lo que es la creación de Páginas Web Desarrollo de Softwares? ¿O estás pensando en cambiar de carrera y entrar a la maravillosa area de tecnología?',
+    },
+    {
+      id: 4,
+      title: 'Spring Framework. ¿Qué es ?',
+      category: 'Backend',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/backend1.png',
+      videoUrl: 'https://www.youtube.com/watch?v=t-iqt1b2qqk&ab_channel=AluraLatam',
+      description: '¿Busca un framework  para utilizar en sus proyectos? ¿Conoce Spring Framework? Spring es el framework más usado de Java. Nos ofrece herramientas que nos permiten crear proyectos más avanzados, con mejores prácticas y en menor tiempo. También posee una gran comunidad, lo que nos brinda muchísima documentación y ayuda.',
+    },
+    {
+      id: 5,
+      title: '¿Qué es SQL y NoSQL?',
+      category: 'Backend',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/backend2.png',
+      videoUrl: 'https://www.youtube.com/watch?v=cLLKVd5CNLc&ab_channel=AluraLatam',
+      description: '¿Cuáles son las diferencias entre una estructura de datos relacional (SQL) y una no relacional (NoSQL) y cuáles son las principales ventajas de cada una? Álvaro Camacho lo explica en este vídeo.',
+    },
+    {
+      id: 6,
+      title: 'Simplificando tu código en Java: Conoce los enum',
+      category: 'Backend',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/backend3.png',
+      videoUrl: 'https://www.youtube.com/watch?v=EoPvlE85XAQ&ab_channel=AluraLatam',
+      description: '¿Escribir muchas variables del tipo constantes en Java te parece un proceso tedioso y que genera muchas líneas de código? ',
+    },
+    {
+      id: 7,
+      title: '¿Qué son las Soft Skills?',
+      category: 'Innovación',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/inovation1.png',
+      videoUrl: 'https://www.youtube.com/watch?v=vhwspfvI52k&ab_channel=AluraLatam',
+      description: '¿Qué son las Softskills y por qué es tan importante desarrollarlas para posicionarse en el mercado laboral? En este video de Alura Tips, Pri Stuani nos habla de las habilidades más buscadas por las empresas en sus profesionales y cómo las Soft Skills te ayudan en el día a día.',
+    },
+    {
+      id: 8,
+      title: '7 Soft Skills más deseadas por las empresas',
+      category: 'Innovación',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/inovation2.png',
+      videoUrl: 'https://www.youtube.com/watch?v=YhR7Zp8NUzE&ab_channel=AluraLatam',
+      description: 'Seguro que ya escuchaste hablar sobre las Soft Skills, pero ¿sabes cuáles son las 7 más buscadas por las empresas? Quédate en este video con nosotros que vamos a explicarte la importancia de estas habilidades y porque son tan requeridas en el mercado laboral.',
+    },
+    {
+      id: 9,
+      title: '¿Qué son las metodologias ágiles?',
+      category: 'Innovación',
+      imageUrl: 'D:\ESTUDIOS\Generacion _one_next_7\Challenge AluraFlix\AluraFlix\src\assets\img/inovation3.png',
+      videoUrl: 'https://www.youtube.com/watch?v=6N3OkLCfK-0&ab_channel=AluraLatam',
+      description: 'En este video nuestra invitada, Andyara, nos explicará que són las muy conocidas hoy en día metodologias ágiles y nos comentará un poco sobre como aplicarlas y cuáles son los beneficios de utilizarlas en su equipo o empresa.',
+    },
+  ];
+  
+  export default videos;
+  
