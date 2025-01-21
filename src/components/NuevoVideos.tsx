@@ -14,13 +14,6 @@ import {
 } from '@mui/material';
 import { VideoData } from '../App';
 
-interface NuevoVideoProps {
-  videoToEdit: VideoData | null;
-  onSave: (video: VideoData) => void;
-  open: boolean;
-  onClose: () => void;
-}
-
 const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onClose }) => {
   const [videoData, setVideoData] = useState<VideoData>({
     id: undefined,
@@ -32,7 +25,7 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [snackbarOpen, setSnackbarOpen] = useState(false); // Estado para el Snackbar
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   useEffect(() => {
     if (open) {
@@ -78,7 +71,7 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
   const handleSubmit = () => {
     if (validate()) {
       onSave(videoData);
-      setSnackbarOpen(true); // Abre el Snackbar al guardar
+      setSnackbarOpen(true);
       onClose();
     }
   };
@@ -97,13 +90,13 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
             left: '50%',
             transform: 'translate(-50%, -50%)',
             width: { xs: 300, sm: 400 },
-            bgcolor: '#f4f7fc', // Color de fondo un tono azul claro
-            borderRadius: '10px', // Esquinas redondeada
-            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)', // Sombra 
-            p: 4, // Espaciado interno
+            bgcolor: '#000000', // Fondo negro
+            borderRadius: '10px',
+            boxShadow: '0px 4px 20px rgba(255, 255, 255, 0.2)', // Sombra blanca
+            p: 4,
           }}
         >
-          <Typography variant="h4" align="center" gutterBottom>
+          <Typography variant="h4" align="center" gutterBottom sx={{ color: '#FFFFFF' }}>
             {videoToEdit ? 'Editar Video' : 'Nuevo Video'}
           </Typography>
           <Box component="form" autoComplete="off" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -116,16 +109,26 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
               required
               error={!!errors.title}
               helperText={errors.title}
+              InputProps={{
+                style: { backgroundColor: '#FFFFFF', color: '#000000' }, // Fondo blanco, texto negro
+              }}
+              InputLabelProps={{
+                style: { color: '#FFFFFF' }, // Color de etiqueta
+              }}
             />
             <FormControl fullWidth error={!!errors.category}>
-              <InputLabel>Categoría</InputLabel>
+              <InputLabel sx={{ color: '#FFFFFF' }}>Categoría</InputLabel>
               <Select
                 name="category"
                 value={videoData.category}
                 onChange={handleSelectChange}
                 label="Categoría"
+                sx={{
+                  backgroundColor: '#FFFFFF',
+                  color: '#000000',
+                }}
               >
-                {['Frontend', 'Backend', 'Innovación',].map((category) => (
+                {['Frontend', 'Backend', 'Innovación'].map((category) => (
                   <MenuItem key={category} value={category}>
                     {category}
                   </MenuItem>
@@ -146,6 +149,12 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
               required
               error={!!errors.imageUrl}
               helperText={errors.imageUrl}
+              InputProps={{
+                style: { backgroundColor: '#FFFFFF', color: '#000000' },
+              }}
+              InputLabelProps={{
+                style: { color: '#FFFFFF' },
+              }}
             />
             <TextField
               label="Enlace del Video"
@@ -156,6 +165,12 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
               required
               error={!!errors.videoUrl}
               helperText={errors.videoUrl}
+              InputProps={{
+                style: { backgroundColor: '#FFFFFF', color: '#000000' },
+              }}
+              InputLabelProps={{
+                style: { color: '#FFFFFF' },
+              }}
             />
             <TextField
               label="Descripción"
@@ -167,10 +182,16 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
               rows={4}
               error={!!errors.description}
               helperText={errors.description}
+              InputProps={{
+                style: { backgroundColor: '#FFFFFF', color: '#000000' },
+              }}
+              InputLabelProps={{
+                style: { color: '#FFFFFF' },
+              }}
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Button variant="contained" color="primary" onClick={handleSubmit}>
-              {videoToEdit ? 'Actualizar' : 'Guardar'}
+                {videoToEdit ? 'Actualizar' : 'Guardar'}
               </Button>
               <Button
                 variant="outlined"
@@ -188,12 +209,12 @@ const NuevoVideo: React.FC<NuevoVideoProps> = ({ videoToEdit, onSave, open, onCl
       </Modal>
       <Snackbar
         open={snackbarOpen}
-        autoHideDuration={3000} // Se oculta automáticamente en 3 segundos
+        autoHideDuration={3000}
         onClose={handleSnackbarClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
         <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
-           Guardado exitosamente.
+          Guardado exitosamente.
         </Alert>
       </Snackbar>
     </>
